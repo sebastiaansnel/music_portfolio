@@ -36,7 +36,7 @@ A limitation is that spotifu doesn't provide the popularity of the tracks in the
 
 Paul Kalkbrenner grew up in eastern Berlin and had the age of 13 when the wall fell. Right after that he started to spin records and became the big dj he
 is nowadays. Gia 2000 is an example of a typical Paul Kalkbrenner track. Typical about this track is the peaceful vibe that Paul tries to create by the
-simplicity of the track.
+simplicity of the track
 
 
 

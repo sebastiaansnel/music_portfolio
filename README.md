@@ -40,6 +40,24 @@ simplicity of the track
 
 
 
+Homework 2:
+
+images:
+![Rplot](https://user-images.githubusercontent.com/59564243/154936037-e75fc40d-0620-46ed-b2e9-562321b1e93f.png)
+
+![Rplot01](https://user-images.githubusercontent.com/59564243/154936071-91d4c8b3-6bf8-49da-83a9-72feac5cc191.png)
+
+![Rplot02](https://user-images.githubusercontent.com/59564243/154936089-69fc2aa9-7df5-4cd8-8a31-3f8f7ab642dc.png)
+
+
+
+
+
+
+
+
+
+
 
 
 

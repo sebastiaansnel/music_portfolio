@@ -1,0 +1,165 @@
+---
+title: "Computational musicology"
+author: "Sebastiaan Snel"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    logo: /Users/sebastiaan/Documents/music_portfolio/logo.png
+---
+
+<style>                     
+.navbar {
+  background-color:#191414;
+  color: white
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #1DB954;
+    color: white;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: white;
+  background-color: #1DB954;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: yellow;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: yellow;
+}
+
+.navbar-brand {
+color:white!important;
+}
+
+.navbar-logo img {
+    position: absolute;
+    width: 92px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    right: 10px;
+
+</style>
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(spotifyr)
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+library(plotly)
+berlintechno <- get_playlist_audio_features("","7Bz9NmEmPxSnDihwP5m8TW")
+berlintechno_pre1989 <- get_playlist_audio_features("","5VpXCpPIf54z6nbQSn2QZe")
+berlintechno_post1989 <- get_playlist_audio_features("","2Jyk5M7FXsYLmgTZPbqZLj")
+```
+
+
+# General information
+
+Student: Sebastiaan Snel  
+StudentID: 11855479  
+Computational musicology  
+
+
+
+**General research question:**
+
+In the city Berlin in the genres house and techno. How did tracks from the genres change because of the fall of the Berlin wall?  
+And how did these genres change differently? A comparison between pre and post Berlin wall fall tracks. 
+
+ **Corpus** 
+
+The corpus exists of a gathering of house and techno tracks that are made by Berlin artists before and after the fall of the Berlin wall.  
+I think a good timespan to choose would be from tracks that were released between 10 or 15 years before and 10 or 15 years after the fall.
+
+**Decision of choosing the corpus**
+
+The decision of choosing this corpus is because I am interested in cultural influences on specific music genres that I like.   
+The interesting part of this case is the change from communism to capitalism in the eastern part of the city which could have   
+a major effect on the music that is listened to in this period of time. 
+
+**Grouping**
+
+At first the different groups in the corpus are the genres house and techno. Second these genres are splitted up in pre and post fall of the Berlin wall.  
+Third these groups could be splitted up in eastern Berlin artists and western Berlin artists. The differences among these groups could be that the eastern   
+Berlin artists made threw a much bigger cultural change in these years then the western Berlin artists. There could be a difference in change or these   
+groups could have created change in the other groups.
+
+**Gaps**
+
+I think the most important gaps could be the tracks that aren't on spotify of the smaller groups like eastern - Berlin - pre wall fall - house music.   
+A limitation is that spotifu doesn't provide the popularity of the tracks in the time that they were released because spotify didn't exist at that time.
+
+**An example of an artist and song**
+
+Paul Kalkbrenner grew up in eastern Berlin and had the age of 13 when the wall fell. Right after that he started to spin records and became the big dj he  
+is nowadays. Gia 2000 is an example of a typical Paul Kalkbrenner track. Typical about this track is the peaceful vibe that Paul tries to create by the  
+simplicity of the track
+
+Grouped scatterplot 
+=====================================
+
+```{r}
+plot <- ggplot() +
+  geom_point(data = berlintechno_pre1989, aes(x = tempo, y = danceability), color = "#1DB954") +
+  geom_point(data = berlintechno_post1989, aes(x = tempo, y = danceability), color = "#FF339F") +
+  theme(panel.background = element_rect(fill = "#cde6ff")) +
+  ggtitle("Tempo versus valence") 
+ggplotly(plot)
+```
+
+
+Non grouped scatterplot
+=====================================
+
+```{r}
+plot <- ggplot(berlintechno, aes(x = tempo, y = danceability, size = loudness)) +
+  geom_point(size = 1.4, color ="#1DB954") +
+  geom_smooth(method="loess", se=F, color = "#191414") +
+  xlim(c(50, 180)) +
+  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
+  theme(panel.background = element_rect(fill = "#cde6ff")) +
+  ggtitle("Danceability versus tempo")
+ggplotly(plot)
+```
+
+
+Boxplot
+=====================================
+
+```{r}
+berlintechno <- unique(berlintechno)
+plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
+  geom_boxplot(color ="#1DB954") +
+  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
+  theme(panel.background = element_rect(fill = "#cde6ff")) +
+  ggtitle("Acousticness versus key")
+ggplotly(plot)
+```
+
+Scatterplot
+=====================================
+
+```{r}
+plot <- ggplot() +
+  geom_point(data = berlintechno_pre1989, aes(x = energy, y = loudness), color = "#1DB954") +
+  geom_point(data = berlintechno_post1989, aes(x = energy, y = loudness), color = "#FF339F") +
+  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
+  theme(panel.background = element_rect(fill = "#cde6ff")) +
+  ggtitle("Loudness versus energy") 
+ggplotly(plot)
+```
+
+
+
+

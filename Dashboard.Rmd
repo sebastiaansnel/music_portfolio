@@ -63,7 +63,6 @@ berlintechno_pre1989 <- get_playlist_audio_features("","5VpXCpPIf54z6nbQSn2QZe")
 berlintechno_post1989 <- get_playlist_audio_features("","2Jyk5M7FXsYLmgTZPbqZLj")
 ```
 
-
 # General information
 
 Student: Sebastiaan Snel  
@@ -160,6 +159,14 @@ plot <- ggplot() +
 ggplotly(plot)
 ```
 
-
+3D
+=====================================
+```{r}
+data(berlintechno)
+# designing the first 3-dimensional plot
+plot <- plot_ly(berlintechno,x=~tempo, y=~danceability, z=~energy ,color=~loudness, mode= "markers",type = "scatter3d") %>% 
+  layout(title = "Tempo, danceability, energy")
+plot
+```
 
 

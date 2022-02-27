@@ -4,6 +4,9 @@ Student: Sebastiaan Snel
 StudentID: 11855479
 Computational musicology
 
+https://sebastiaansnel.github.io/music_portfolio/
+
+
 **General research question:**
 
 In the city Berlin in the genres house and techno. How did tracks from the genres change because of the fall of the Berlin wall? 
@@ -37,6 +40,27 @@ A limitation is that spotifu doesn't provide the popularity of the tracks in the
 Paul Kalkbrenner grew up in eastern Berlin and had the age of 13 when the wall fell. Right after that he started to spin records and became the big dj he
 is nowadays. Gia 2000 is an example of a typical Paul Kalkbrenner track. Typical about this track is the peaceful vibe that Paul tries to create by the
 simplicity of the track
+
+
+
+Homework 2:
+
+images:
+![Rplot](https://user-images.githubusercontent.com/59564243/154936037-e75fc40d-0620-46ed-b2e9-562321b1e93f.png)
+This first plot shows the tempo of the tarcks versus the valence that a song has. At first i thought a higher tempo would mean a higher valence but this is not really true.
+
+![Rplot01](https://user-images.githubusercontent.com/59564243/154936071-91d4c8b3-6bf8-49da-83a9-72feac5cc191.png)
+In this image we can see if in e certain key the acousticness is higher or not. It is interesting because it's hard to see it without a graph.
+
+![Rplot02](https://user-images.githubusercontent.com/59564243/154936089-69fc2aa9-7df5-4cd8-8a31-3f8f7ab642dc.png)
+The interesting part aboiut image 3 is that there should be a sweet spot visible for dancebility in tempo.
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Computational musicology"
-author: "Sebastiaan Snel"
+author: "Sebas Snel"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns

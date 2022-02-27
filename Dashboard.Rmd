@@ -12,6 +12,9 @@ output:
 .navbar {
   background-color:#191414;
   color: white
+  a:hover, a.active {
+    color: #1DB954;
+  }
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -24,15 +27,6 @@ output:
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: white;
   background-color: #1DB954;
-}
-
-.navbar-inverse .navbar-toggle:hover,
-.navbar-inverse .navbar-toggle:focus {
-  background-color: yellow;
-}
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-  border-color: yellow;
 }
 
 .navbar-brand {
@@ -58,10 +52,146 @@ library(dplyr)
 library(ggplot2)
 library(ggthemes)
 library(plotly)
+library(compmus)
+
+#playlist
 berlintechno <- get_playlist_audio_features("","7Bz9NmEmPxSnDihwP5m8TW")
 berlintechno_pre1989 <- get_playlist_audio_features("","5VpXCpPIf54z6nbQSn2QZe")
 berlintechno_post1989 <- get_playlist_audio_features("","2Jyk5M7FXsYLmgTZPbqZLj")
+
+#albums
+album_example <- get_album("4TkE4e11d4UlmNQAkbcTmM")
+album1 <- get_album("1MxNzQcux4usR17tH8IxWE")
+album2 <- get_album("3Cnjhwmwy5ea25BKfZhMaz")
+album3 <- get_album("6f5OuDkSsmhn4GJJvtJxwE")
+album4 <- get_album("6BTgqsN2O8OTquzXfZQh0E")
+album5 <- get_album("0euHp2biPx92TjL3igg1xd")
+album6 <- get_album("2SZdDyJaFJ23SjIC3ysuDz")
+album7 <- get_album("2iWosKU5zEZmb82d5XDTsb")
+album8 <- get_album("4w8gAoyjF0y7Xiwpqx5hwA")
+album9 <- get_album("1QA0oIfp6P7erWEDVsNkqd")
+album10 <- get_album("3xbTLWUAiB3pHHV6v2r085")
+album11 <- get_album("250evC0F234OVb6d2YbihG")
+album12 <- get_album("3HWtUixORCnZhzpIj06vzY")
+album13 <- get_album("0cSYErMFF4iatUT0ppKXt5")
+album14 <- get_album("3VJeDse5LvBGH5BLeXwXEX")
+album15 <- get_album("3OBL9y5k2PkUnKjJMXN4aU")
+album16 <- get_album("4rQdLnqkdPUskf2ARGFfi2")
+album17 <- get_album("4CUA79WerPIiaxZlKolSaA")
+album18 <- get_album("1R1AYOb2IPVFDzoQX4luyr")
+album19 <- get_album("6VYrpIIWwjFcOrEaFTxsNf")
+album21 <- get_album("6ZcgmpLCJlduucY4Vsd23F")
+album22 <- get_album("5JGT4m1itljzsu4KFjNEDw")
+album23 <- get_album("499wTI0GUAMJ17VF1uqnzA")
+album24 <- get_album("2T6FL12tHvGxKMKRk0D078")
+album25 <- get_album("4v25SciPFniE5QNthhtJHD")
+album26 <- get_album("0PhFrwkE9TyaE6sHO83Kgv")
+album27 <- get_album("3NWl1If3ceSVzJEaLvlNWx")
+album28 <- get_album("2FFZyWhsdGFwZaEQUe4yCC")
+album29 <- get_album("33sBrPaso2xAcW5GmSmVez")
+album30 <- get_album("33sBrPaso2xAcW5GmSmVez")
+album31 <- get_album("2jl2XQN5Z0iZPn5thGy9jS")
+album32 <- get_album("2PGJcnQSTM684mavQAm1JT")
+album33 <- get_album("1FDMdHT4VbFeE64Wrzy1UR")
+album34 <- get_album("2XxqjEAtlkRpKJxEVWTJQv")
+album35 <- get_album("5jeWDuKVkfQVUnCRrucxis")
+album36 <- get_album("42nhTxeaxPiqdi6VHBz08f")
+album37 <- get_album("2giLDB7DHTHVR1IhYKOu07")
+album38 <- get_album("3QiuQrKMLpt7MDgjUDvv8d")
+album39 <- get_album("6QKaXJQss3zBjQYyYQHoMv")
+album40 <- get_album("4G11Lr35wOYhRwV0j5h3UM")
+album41 <- get_album("1gKsehEyIyBj5bUeSAEe8w")
+album42 <- get_album("2FnRPrzmM3SpRkoneDrv1G")
+album43 <- get_album("0rrr4SP4dOoCynCyPFxA9j")
+album44 <- get_album("4ZAZx6eAJEGjzTEqFo5yRK")
+album45 <- get_album("4ZAZx6eAJEGjzTEqFo5yRK")
+album46 <- get_album("4sPwJAdbD4Y6xbf3So5109")
+album47 <- get_album("5Q4WiybOkObccOvqOXSBrM")
+album48 <- get_album("4UCCC3tZFzRG62G1xN8oRa")
+album49 <- get_album("0nlDAdh5A07zBP4D36Kh44")
+album50 <- get_album("0omYUPqP5YTdFToUgnw14y")
+album51 <- get_album("1yZOrl7EsWSLgX0VZ05Qq8")
+album52 <- get_album("6G1eYsIgEbtpXIDFQqIYUb")
+album53 <- get_album("5C7fbFNhmirQm5QttweoEz")
+album54 <- get_album("1MxNzQcux4usR17tH8IxWE")
+album55 <- get_album("1Wbqf44UWufpAtuXWHexVK")
+album56 <- get_album("34tpXPKpCkeGVKb3FKE8Zm")
+album57 <- get_album("3HziRc0HrfhPHa2RHM5LPH")
+album58 <- get_album("4TkE4e11d4UlmNQAkbcTmM")
+
+#sorted albums
+album1 <- album1[ c("name","release_date", "popularity", "total_tracks")]
+album2 <- album2[ c("name","release_date", "popularity", "total_tracks")]
+album3 <- album3[ c("name","release_date", "popularity", "total_tracks")]
+album4 <- album4[ c("name","release_date", "popularity", "total_tracks")]
+album5 <- album5[ c("name","release_date", "popularity", "total_tracks")]
+album6 <- album6[ c("name","release_date", "popularity", "total_tracks")]
+album7 <- album7[ c("name","release_date", "popularity", "total_tracks")]
+album8 <- album8[ c("name","release_date", "popularity", "total_tracks")]
+album9 <- album9[ c("name","release_date", "popularity", "total_tracks")]
+album10 <- album10[ c("name","release_date", "popularity", "total_tracks")]
+album11 <- album11[ c("name","release_date", "popularity", "total_tracks")]
+album12 <- album12[ c("name","release_date", "popularity", "total_tracks")]
+album13 <- album13[ c("name","release_date", "popularity", "total_tracks")]
+album14 <- album14[ c("name","release_date", "popularity", "total_tracks")]
+album15 <- album15[ c("name","release_date", "popularity", "total_tracks")]
+album16 <- album16[ c("name","release_date", "popularity", "total_tracks")]
+album17 <- album17[ c("name","release_date", "popularity", "total_tracks")]
+album18 <- album18[ c("name","release_date", "popularity", "total_tracks")]
+album19 <- album19[ c("name","release_date", "popularity", "total_tracks")]
+album21 <- album21[ c("name","release_date", "popularity", "total_tracks")]
+album22 <- album22[ c("name","release_date", "popularity", "total_tracks")]
+album23 <- album23[ c("name","release_date", "popularity", "total_tracks")]
+album24 <- album24[ c("name","release_date", "popularity", "total_tracks")]
+album25 <- album25[ c("name","release_date", "popularity", "total_tracks")]
+album26 <- album26[ c("name","release_date", "popularity", "total_tracks")]
+album27 <- album27[ c("name","release_date", "popularity", "total_tracks")]
+album28 <- album28[ c("name","release_date", "popularity", "total_tracks")]
+album29 <- album29[ c("name","release_date", "popularity", "total_tracks")]
+album30 <- album30[ c("name","release_date", "popularity", "total_tracks")]
+album31 <- album31[ c("name","release_date", "popularity", "total_tracks")]
+album32 <- album32[ c("name","release_date", "popularity", "total_tracks")]
+album33 <- album33[ c("name","release_date", "popularity", "total_tracks")]
+album34 <- album34[ c("name","release_date", "popularity", "total_tracks")]
+album35 <- album35[ c("name","release_date", "popularity", "total_tracks")]
+album36 <- album36[ c("name","release_date", "popularity", "total_tracks")]
+album37 <- album37[ c("name","release_date", "popularity", "total_tracks")]
+album38 <- album38[ c("name","release_date", "popularity", "total_tracks")]
+album39 <- album39[ c("name","release_date", "popularity", "total_tracks")]
+album40 <- album40[ c("name","release_date", "popularity", "total_tracks")]
+album41 <- album41[ c("name","release_date", "popularity", "total_tracks")]
+album42 <- album42[ c("name","release_date", "popularity", "total_tracks")]
+album43 <- album43[ c("name","release_date", "popularity", "total_tracks")]
+album44 <- album44[ c("name","release_date", "popularity", "total_tracks")]
+album45 <- album45[ c("name","release_date", "popularity", "total_tracks")]
+album46 <- album46[ c("name","release_date", "popularity", "total_tracks")]
+album47 <- album47[ c("name","release_date", "popularity", "total_tracks")]
+album48 <- album48[ c("name","release_date", "popularity", "total_tracks")]
+album49 <- album49[ c("name","release_date", "popularity", "total_tracks")]
+album50 <- album50[ c("name","release_date", "popularity", "total_tracks")]
+album51 <- album51[ c("name","release_date", "popularity", "total_tracks")]
+album52 <- album52[ c("name","release_date", "popularity", "total_tracks")]
+album53 <- album53[ c("name","release_date", "popularity", "total_tracks")]
+album54 <- album54[ c("name","release_date", "popularity", "total_tracks")]
+album55 <- album55[ c("name","release_date", "popularity", "total_tracks")]
+album56 <- album56[ c("name","release_date", "popularity", "total_tracks")]
+album57 <- album57[ c("name","release_date", "popularity", "total_tracks")]
+album58 <- album58[ c("name","release_date", "popularity", "total_tracks")]
+
+albums <- list(album1, album2, album3, album4, album5, album6, album7, album8, album9, album10, album11, album12, album13, album14, album15, album16, album17, album18, album19, album21,  album22, album23, album24, album25, album26, album27, album28, album29, album30, album31, album32, album33, album34, album35, album36, album37, album38, album39, album40, album41, album42, album43, album44, album45, album46, album47, album48, album49, album50, album51, album52, album53, album54, album55, album56, album57)
+
+
+
+#album_name <- unnest(album_example, artists)
+#print(album_name)
+#unnest(), nest(), listcolumn()
+
+albums <- bind_rows(albums)
+print(albums)
+
 ```
+
+
 
 
 # General information
@@ -106,7 +236,7 @@ Paul Kalkbrenner grew up in eastern Berlin and had the age of 13 when the wall f
 is nowadays. Gia 2000 is an example of a typical Paul Kalkbrenner track. Typical about this track is the peaceful vibe that Paul tries to create by the  
 simplicity of the track
 
-Grouped scatterplot 
+Grouped scatterplot {data-navmenu="Track scatterplots" data-icon="fa-list"}
 =====================================
 
 ```{r}
@@ -119,7 +249,7 @@ ggplotly(plot)
 ```
 
 
-Non grouped scatterplot
+Non grouped scatterplot 1 {data-navmenu="Track scatterplots" data-icon="fa-list"}
 =====================================
 
 ```{r}
@@ -133,21 +263,7 @@ plot <- ggplot(berlintechno, aes(x = tempo, y = danceability, size = loudness)) 
 ggplotly(plot)
 ```
 
-
-Boxplot
-=====================================
-
-```{r}
-berlintechno <- unique(berlintechno)
-plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
-  geom_boxplot(color ="#1DB954") +
-  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
-  theme(panel.background = element_rect(fill = "#cde6ff")) +
-  ggtitle("Acousticness versus key")
-ggplotly(plot)
-```
-
-Scatterplot
+Non grouped scatterplot 2 {data-navmenu="Track scatterplots" data-icon="fa-list"}
 =====================================
 
 ```{r}
@@ -158,6 +274,67 @@ plot <- ggplot() +
   theme(panel.background = element_rect(fill = "#cde6ff")) +
   ggtitle("Loudness versus energy") 
 ggplotly(plot)
+```
+
+Boxplot {data-navmenu="Other track plots" data-icon="fa-list"}
+=====================================
+```{r}
+berlintechno <- unique(berlintechno)
+plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
+  geom_boxplot(color ="#1DB954") +
+  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
+  theme(panel.background = element_rect(fill = "#cde6ff")) +
+  ggtitle("Acousticness versus key")
+ggplotly(plot)
+```
+
+3D {data-navmenu="Other track plots" data-icon="fa-list"}
+=====================================
+```{r}
+data(berlintechno)
+# designing the first 3-dimensional plot
+plot <- plot_ly(berlintechno,x=~tempo, y=~danceability, z=~energy ,color=~loudness, mode= "markers",type = "scatter3d") %>% 
+  layout(title = "Tempo, danceability, energy")
+plot
+```
+
+
+Album scatterplot {data-navmenu="Album plots" data-icon="fa-list"}
+=====================================
+```{r}
+ggplot(albums, aes(x = release_date, y = popularity, color=total_tracks)) +
+  geom_point() +
+  geom_smooth(method="loess", se=F, color = "#191414") +
+  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
+  theme(panel.background = element_rect(fill = "#cde6ff")) +
+  scale_x_discrete(guide = guide_axis(check.overlap = TRUE)) 
+```
+
+exercise {data-navmenu="Album plots" data-icon="fa-list"}
+=====================================
+```{r scatter}
+wood <-
+  get_tidy_audio_analysis("6IQILcYkN2S2eSu5IHoPEH") %>%
+  select(segments) %>%
+  unnest(segments) %>%
+  select(start, duration, pitches)
+
+wood %>%
+  mutate(pitches = map(pitches, compmus_normalise, "euclidean")) %>%
+  compmus_gather_chroma() %>% 
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = pitch_class,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  theme_minimal() +
+  scale_fill_viridis_c()
+
 ```
 
 

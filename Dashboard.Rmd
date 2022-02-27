@@ -12,9 +12,12 @@ output:
 .navbar {
   background-color:#191414;
   color: white
+<<<<<<< HEAD
+=======
   a:hover, a.active {
     color: #1DB954;
   }
+>>>>>>> 688e7bc4f3d5b31e02aaac0a55ac875dce662418
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -29,6 +32,18 @@ output:
   background-color: #1DB954;
 }
 
+<<<<<<< HEAD
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: yellow;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: yellow;
+}
+
+=======
+>>>>>>> 688e7bc4f3d5b31e02aaac0a55ac875dce662418
 .navbar-brand {
 color:white!important;
 }
@@ -52,6 +67,14 @@ library(dplyr)
 library(ggplot2)
 library(ggthemes)
 library(plotly)
+<<<<<<< HEAD
+berlintechno <- get_playlist_audio_features("","7Bz9NmEmPxSnDihwP5m8TW")
+berlintechno_pre1989 <- get_playlist_audio_features("","5VpXCpPIf54z6nbQSn2QZe")
+berlintechno_post1989 <- get_playlist_audio_features("","2Jyk5M7FXsYLmgTZPbqZLj")
+```
+
+
+=======
 library(compmus)
 
 #playlist
@@ -194,6 +217,7 @@ print(albums)
 
 
 
+>>>>>>> 688e7bc4f3d5b31e02aaac0a55ac875dce662418
 # General information
 
 Student: Sebastiaan Snel  
@@ -236,7 +260,11 @@ Paul Kalkbrenner grew up in eastern Berlin and had the age of 13 when the wall f
 is nowadays. Gia 2000 is an example of a typical Paul Kalkbrenner track. Typical about this track is the peaceful vibe that Paul tries to create by the  
 simplicity of the track
 
+<<<<<<< HEAD
+Grouped scatterplot 
+=======
 Grouped scatterplot {data-navmenu="Track scatterplots" data-icon="fa-list"}
+>>>>>>> 688e7bc4f3d5b31e02aaac0a55ac875dce662418
 =====================================
 
 ```{r}
@@ -249,7 +277,11 @@ ggplotly(plot)
 ```
 
 
+<<<<<<< HEAD
+Non grouped scatterplot
+=======
 Non grouped scatterplot 1 {data-navmenu="Track scatterplots" data-icon="fa-list"}
+>>>>>>> 688e7bc4f3d5b31e02aaac0a55ac875dce662418
 =====================================
 
 ```{r}
@@ -263,6 +295,13 @@ plot <- ggplot(berlintechno, aes(x = tempo, y = danceability, size = loudness)) 
 ggplotly(plot)
 ```
 
+<<<<<<< HEAD
+
+Boxplot
+=====================================
+
+```{r}
+=======
 Non grouped scatterplot 2 {data-navmenu="Track scatterplots" data-icon="fa-list"}
 =====================================
 
@@ -279,6 +318,7 @@ ggplotly(plot)
 Boxplot {data-navmenu="Other track plots" data-icon="fa-list"}
 =====================================
 ```{r}
+>>>>>>> 688e7bc4f3d5b31e02aaac0a55ac875dce662418
 berlintechno <- unique(berlintechno)
 plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
   geom_boxplot(color ="#1DB954") +
@@ -288,6 +328,19 @@ plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
 ggplotly(plot)
 ```
 
+<<<<<<< HEAD
+Scatterplot
+=====================================
+
+```{r}
+plot <- ggplot() +
+  geom_point(data = berlintechno_pre1989, aes(x = energy, y = loudness), color = "#1DB954") +
+  geom_point(data = berlintechno_post1989, aes(x = energy, y = loudness), color = "#FF339F") +
+  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
+  theme(panel.background = element_rect(fill = "#cde6ff")) +
+  ggtitle("Loudness versus energy") 
+ggplotly(plot)
+=======
 3D {data-navmenu="Other track plots" data-icon="fa-list"}
 =====================================
 ```{r}
@@ -335,6 +388,7 @@ wood %>%
   theme_minimal() +
   scale_fill_viridis_c()
 
+>>>>>>> 688e7bc4f3d5b31e02aaac0a55ac875dce662418
 ```
 
 

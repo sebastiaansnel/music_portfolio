@@ -4,6 +4,9 @@ Student: Sebastiaan Snel
 StudentID: 11855479
 Computational musicology
 
+https://sebastiaansnel.github.io/music_portfolio/
+
+
 **General research question:**
 
 In the city Berlin in the genres house and techno. How did tracks from the genres change because of the fall of the Berlin wall? 

@@ -52,6 +52,7 @@ library(dplyr)
 library(ggplot2)
 library(ggthemes)
 library(plotly)
+library(compmus)
 
 #playlist
 berlintechno <- get_playlist_audio_features("","7Bz9NmEmPxSnDihwP5m8TW")
@@ -59,6 +60,7 @@ berlintechno_pre1989 <- get_playlist_audio_features("","5VpXCpPIf54z6nbQSn2QZe")
 berlintechno_post1989 <- get_playlist_audio_features("","2Jyk5M7FXsYLmgTZPbqZLj")
 
 #albums
+album_example <- get_album("4TkE4e11d4UlmNQAkbcTmM")
 album1 <- get_album("1MxNzQcux4usR17tH8IxWE")
 album2 <- get_album("3Cnjhwmwy5ea25BKfZhMaz")
 album3 <- get_album("6f5OuDkSsmhn4GJJvtJxwE")
@@ -106,7 +108,16 @@ album45 <- get_album("4ZAZx6eAJEGjzTEqFo5yRK")
 album46 <- get_album("4sPwJAdbD4Y6xbf3So5109")
 album47 <- get_album("5Q4WiybOkObccOvqOXSBrM")
 album48 <- get_album("4UCCC3tZFzRG62G1xN8oRa")
-
+album49 <- get_album("0nlDAdh5A07zBP4D36Kh44")
+album50 <- get_album("0omYUPqP5YTdFToUgnw14y")
+album51 <- get_album("1yZOrl7EsWSLgX0VZ05Qq8")
+album52 <- get_album("6G1eYsIgEbtpXIDFQqIYUb")
+album53 <- get_album("5C7fbFNhmirQm5QttweoEz")
+album54 <- get_album("1MxNzQcux4usR17tH8IxWE")
+album55 <- get_album("1Wbqf44UWufpAtuXWHexVK")
+album56 <- get_album("34tpXPKpCkeGVKb3FKE8Zm")
+album57 <- get_album("3HziRc0HrfhPHa2RHM5LPH")
+album58 <- get_album("4TkE4e11d4UlmNQAkbcTmM")
 
 #sorted albums
 album1 <- album1[ c("name","release_date", "popularity", "total_tracks")]
@@ -156,8 +167,24 @@ album45 <- album45[ c("name","release_date", "popularity", "total_tracks")]
 album46 <- album46[ c("name","release_date", "popularity", "total_tracks")]
 album47 <- album47[ c("name","release_date", "popularity", "total_tracks")]
 album48 <- album48[ c("name","release_date", "popularity", "total_tracks")]
+album49 <- album49[ c("name","release_date", "popularity", "total_tracks")]
+album50 <- album50[ c("name","release_date", "popularity", "total_tracks")]
+album51 <- album51[ c("name","release_date", "popularity", "total_tracks")]
+album52 <- album52[ c("name","release_date", "popularity", "total_tracks")]
+album53 <- album53[ c("name","release_date", "popularity", "total_tracks")]
+album54 <- album54[ c("name","release_date", "popularity", "total_tracks")]
+album55 <- album55[ c("name","release_date", "popularity", "total_tracks")]
+album56 <- album56[ c("name","release_date", "popularity", "total_tracks")]
+album57 <- album57[ c("name","release_date", "popularity", "total_tracks")]
+album58 <- album58[ c("name","release_date", "popularity", "total_tracks")]
 
-albums <- list(album1, album2, album3, album4, album5, album6, album7, album8, album9, album10, album11, album12, album13, album14, album15, album16, album17, album18, album19, album21,  album22, album23, album24, album25, album26, album27, album28, album29, album30, album31, album32, album33, album34, album35, album36, album37, album38, album39, album40, album41, album42, album43, album44, album45, album46, album47, album48)
+albums <- list(album1, album2, album3, album4, album5, album6, album7, album8, album9, album10, album11, album12, album13, album14, album15, album16, album17, album18, album19, album21,  album22, album23, album24, album25, album26, album27, album28, album29, album30, album31, album32, album33, album34, album35, album36, album37, album38, album39, album40, album41, album42, album43, album44, album45, album46, album47, album48, album49, album50, album51, album52, album53, album54, album55, album56, album57)
+
+
+
+#album_name <- unnest(album_example, artists)
+#print(album_name)
+#unnest(), nest(), listcolumn()
 
 albums <- bind_rows(albums)
 print(albums)
@@ -277,5 +304,39 @@ Album scatterplot {data-navmenu="Album plots" data-icon="fa-list"}
 ```{r}
 ggplot(albums, aes(x = release_date, y = popularity, color=total_tracks)) +
   geom_point() +
+  geom_smooth(method="loess", se=F, color = "#191414") +
+  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
+  theme(panel.background = element_rect(fill = "#cde6ff")) +
   scale_x_discrete(guide = guide_axis(check.overlap = TRUE)) 
 ```
+
+exercise {data-navmenu="Album plots" data-icon="fa-list"}
+=====================================
+```{r scatter}
+wood <-
+  get_tidy_audio_analysis("6IQILcYkN2S2eSu5IHoPEH") %>%
+  select(segments) %>%
+  unnest(segments) %>%
+  select(start, duration, pitches)
+
+wood %>%
+  mutate(pitches = map(pitches, compmus_normalise, "euclidean")) %>%
+  compmus_gather_chroma() %>% 
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = pitch_class,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  theme_minimal() +
+  scale_fill_viridis_c()
+
+```
+
+
+
+

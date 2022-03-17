@@ -281,7 +281,7 @@ plot <- ggplot() +
 ggplotly(plot)
 ```
 
-Boxplot {data-navmenu="Other track plots" data-icon="fa-list"}
+Boxplot {data-navmenu="tempo and rest" data-icon="fa-list"}
 =====================================
 ```{r}
 berlintechno <- unique(berlintechno)
@@ -293,7 +293,7 @@ plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
 ggplotly(plot)
 ```
 
-3D {data-navmenu="Other track plots" data-icon="fa-list"}
+3D {data-navmenu="tempo and rest" data-icon="fa-list"}
 =====================================
 ```{r}
 data(berlintechno)
@@ -302,6 +302,54 @@ plot <- plot_ly(berlintechno,x=~tempo, y=~danceability, z=~energy ,color=~loudne
   layout(title = "Tempo, danceability, energy")
 plot
 ```
+
+Novelty {data-navmenu="tempo and rest" data-icon="fa-list"}
+=====================================
+```{r}
+Klaus <-
+  get_tidy_audio_analysis("2w99Aa8kBTCRQsXvYbgSg5") %>%
+  select(segments) %>%
+  unnest(segments)
+
+Klaus %>%
+  mutate(loudness_max_time = start + loudness_max_time) %>%
+  arrange(loudness_max_time) %>%
+  mutate(delta_loudness = loudness_max - lag(loudness_max)) %>%
+  ggplot(aes(x = loudness_max_time, y = pmax(0, delta_loudness))) +
+  geom_line() +
+  xlim(0, 30) +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "Novelty")
+
+
+```
+
+Tempogram {data-navmenu="tempo and rest" data-icon="fa-list"}
+=====================================
+```{r}
+Klaus <- get_tidy_audio_analysis("2w99Aa8kBTCRQsXvYbgSg5")
+  
+
+```
+
+Cyclic tempogram {data-navmenu="tempo and rest" data-icon="fa-list"}
+=====================================
+```{r}
+Klaus <- get_tidy_audio_analysis("2w99Aa8kBTCRQsXvYbgSg5")
+
+Klaus %>%
+  tempogram(window_size = 8, hop_size = 1, cyclic = TRUE) %>%
+  ggplot(aes(x = time, y = bpm, fill = power)) +
+  geom_raster() +
+  scale_fill_viridis_c(guide = "none") +
+  labs(x = "Time (s)", y = "Tempo (BPM)") +
+  theme_classic()
+```
+
+
+
+
+
 
 
 Album scatterplot {data-navmenu="Album plots" data-icon="fa-list"}

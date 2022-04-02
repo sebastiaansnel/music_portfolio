@@ -389,7 +389,6 @@ Novelty & tempo {data-navmenu="Special plots" data-icon="fa-list"}
 
 ### Novelty and tempo diagrams
 
-#### Pre
 ```{r}
 Klaus <-
   get_tidy_audio_analysis("25ydPlkygtAluOFfzAoE4m") %>%
@@ -406,7 +405,6 @@ Klaus %>%
   theme_minimal() +
   labs(x = "Time (s)", y = "Novelty")
 ```
-#### Post
 
 ```{r}
 Ellen <-
@@ -427,7 +425,6 @@ Ellen %>%
 ```
 ### Tempograms
 
-#### Pre
 
 ```{r}
 Klaus <- get_tidy_audio_analysis("25ydPlkygtAluOFfzAoE4m")
@@ -441,7 +438,6 @@ Klaus %>%
   theme_classic()
 ```
 
-#### Post
 
 ```{r}
 Klaus <- get_tidy_audio_analysis("4x7Pm0P5qrkWo8wXg8KkFK")
@@ -459,18 +455,17 @@ Klaus %>%
 
 ## Column 2
 
-### The tracks 
-
-```{=html}
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0uMUAidryav4Ws5dxrQONd?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" data-external="1"></iframe>
-```
-
 ### Information
 
 The first graph at the top left shows the novelty function with loudness over time from a track from Klaus Schulze that was released before the fall of the Berlin wall. The graph underneath from a track from Ellen Allien which is released after the fall shows the difference in novelty in between the two tracks. Klaus produced a track with much more variety in it where Ellen produced a track which is more predictable. The change in variety is typical for the transition house music made during this period.
 
 On the second tab the tempograms for both tracks are being showed. This supports the patterns in difference troughout both tracks.
 
+### The tracks 
+
+```{=html}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0uMUAidryav4Ws5dxrQONd?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" data-external="1"></iframe>
+```
 
 
 Dendogram & Heatmap {data-navmenu="Special plots" data-icon="fa-list"}
@@ -555,7 +550,10 @@ halloween_dist %>%
 
 ```
 
-### Information
+### Clustering playlist
+```{=html}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7s2l9uNp4p20CFJmyw58RA?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" data-external="1"></iframe>
+```
 
 ## Column 2
 
@@ -570,16 +568,17 @@ heatmaply(
 ```
 
 ### Information
+Using the clustering playlist which contains 5 trakcs out of the pre group and 5 tracks out of the post group it is visible in the graphs above where spotify splits the tracks on. In the right graph above it is visible that the Schakeln track is categorised in the category c11.
 
 Chromagrams {data-navmenu="Chromagrams" data-icon="fa-list"}
 =====================================
 
-## Column 1 {.tabset}
+## Column 1
 
 ### Key 1
 ```{r}
 pre_berlin <-
-  get_tidy_audio_analysis("2w99Aa8kBTCRQsXvYbgSg5") %>%
+  get_tidy_audio_analysis("60oYZlnYQ6ggVVqX8BFfc9") %>%
   select(segments) %>%
   unnest(segments) %>%
   select(start, duration, pitches)
@@ -602,14 +601,10 @@ pre_berlin %>%
 
 ```
 
-### Information
-
-## Column 2 {.tabset}
-
 ### Key 2
 ```{r}
 past_berlin <-
-  get_tidy_audio_analysis("5fD6IOlU52WpFCY9Z267TP") %>%
+  get_tidy_audio_analysis("60oYZlnYQ6ggVVqX8BFfc9") %>%
   select(segments) %>%
   unnest(segments) %>%
   select(start, duration, pitches)
@@ -632,19 +627,25 @@ past_berlin %>%
 
 ```
 
-### Information
+## Column 2
 
+### Information 
+
+### Track
+```{=html}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/60oYZlnYQ6ggVVqX8BFfc9?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" data-external="1"></iframe>
+```
 
 
 Self-similarity matrices {data-navmenu="Chromagrams" data-icon="fa-list"}
 =====================================
 
-## Column 1 {.tabset}
+## Column 1 
 
 ### Self_similarity matrix 1
 ```{r}
 pre_berlin <-
-  get_tidy_audio_analysis("2w99Aa8kBTCRQsXvYbgSg5") %>%
+  get_tidy_audio_analysis("60oYZlnYQ6ggVVqX8BFfc9") %>%
   compmus_align(bars, segments) %>%                     # Change `bars`
   select(bars) %>%                                      #   in all three
   unnest(bars) %>%                                      #   of these lines.
@@ -682,15 +683,11 @@ pre_berlin %>%
 
 ```
 
-### Information 
-
-## Column 2 {.tabset}
-
 ### Self_similarity matrix 2
 
 ```{r}
 post_berlin <-
-  get_tidy_audio_analysis("5fD6IOlU52WpFCY9Z267TP") %>%
+  get_tidy_audio_analysis("60oYZlnYQ6ggVVqX8BFfc9") %>%
   compmus_align(bars, segments) %>%                     # Change `bars`
   select(bars) %>%                                      #   in all three
   unnest(bars) %>%                                      #   of these lines.
@@ -727,8 +724,14 @@ post_berlin %>%
   labs(x = "", y = "")
 
 ```
+## Column 2
 
 ### Information 
+
+### Track
+```{=html}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/60oYZlnYQ6ggVVqX8BFfc9?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" data-external="1"></iframe>
+```
 
 Chordograms {data-navmenu="Chordograms" data-icon="fa-list"}
 =====================================
@@ -824,7 +827,7 @@ key_templates <-
   )
 
 twenty_five <-
-  get_tidy_audio_analysis("5UVsbUV0Kh033cqsZ5sLQi") %>%
+  get_tidy_audio_analysis("60oYZlnYQ6ggVVqX8BFfc9") %>%
   compmus_align(beats, segments) %>%
   select(beats) %>%
   unnest(beats) %>%
@@ -852,16 +855,12 @@ twenty_five %>%
 
 ```
 
-### Information
-
-## Column 2 {.tabset}
-
 ### Chordogram 2
 
 ```{r}
 
 twenty_five <-
-  get_tidy_audio_analysis("5UVsbUV0Kh033cqsZ5sLQi") %>%
+  get_tidy_audio_analysis("60oYZlnYQ6ggVVqX8BFfc9") %>%
   compmus_align(sections, segments) %>%
   select(sections) %>%
   unnest(sections) %>%
@@ -887,8 +886,15 @@ twenty_five %>%
   theme_minimal() +
   labs(x = "Time (s)", y = "")
 ```
+## Column 2
+
 
 ### Information
+
+### Track
+```{=html}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/60oYZlnYQ6ggVVqX8BFfc9?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" data-external="1"></iframe>
+```
 
 
 

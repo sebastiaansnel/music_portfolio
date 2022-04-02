@@ -193,7 +193,7 @@ albums <- bind_rows(albums)
 
 
 ```
-General information {data-navmenu="General information and spotify" data-icon="fa-list"}
+General information and spotify {data-navmenu="General information" data-icon="fa-list"}
 =====================================
 
 ## Column 1
@@ -339,10 +339,10 @@ Boxplot & 3D {data-navmenu="Special plots" data-icon="fa-list"}
 
 ## Column 1
 
-### Boxplot
+### Boxplot pre
 ```{r, fig.height=9}
-berlintechno <- unique(berlintechno)
-plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
+berlintechno_pre1989 <- unique(berlintechno_pre1989)
+plot <- ggplot(berlintechno_pre1989, aes(x = key, y = tempo, group=key)) +
   geom_boxplot(color ="#1DB954") +
   theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
   theme(panel.background = element_rect(fill = "#cde6ff")) +
@@ -350,9 +350,19 @@ plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
 ggplotly(plot)
 ```
 
-### Information
+### Boxplot post
+```{r, fig.height=9}
+berlintechno_post1989 <- unique(berlintechno_post1989)
+plot <- ggplot(berlintechno_post1989, aes(x = key, y = tempo, group=key)) +
+  geom_boxplot(color ="#1DB954") +
+  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
+  theme(panel.background = element_rect(fill = "#cde6ff")) +
+  ggtitle("Acousticness versus key")
+ggplotly(plot)
+```
 
-## Column 1
+
+## Column 2
 
 ### 3D plot
 
@@ -365,6 +375,13 @@ plot
 ```
 
 ### Information
+
+In the boxplots at the left is visibile how the diversity and the mean in the tempo differs from pre to post. A cause of this could be that the group of musiscians that made house music before the fall of the Berlin wall was much smaller. Artists had their own way of making music and didn't look to a music genre that was mainstream at that time.
+
+After the fall of the Berlin wall house music became more mainstream in Berlin which caused the artists to work in a desired frame subconscious. Here above all of the parameters that we have been speaking of are put together in a graph which makes it easy to see where the clusters from the combined graphs are. The 3D plot includes all of de data.
+
+
+
 
 Novelty & tempo {data-navmenu="Special plots" data-icon="fa-list"}
 =====================================
@@ -828,26 +845,6 @@ twenty_five %>%
 
 ### Information
 
-Key vs bpm {data-navmenu="Chordograms" data-icon="fa-list"}
-=====================================
-
-## Column 1
-
-### Scatterplot
-
-```{r, fig.height=10}
-plot <- ggplot() +
-  geom_point(data = nsa_gig_1, aes(x = key, y = tempo, label = track.name, label2 = speechiness), color = "#1DB954") +
-  geom_point(data = camel_house, aes(x = key, y = tempo, label = track.name, label2 = speechiness), color = "#FF339F") +
-  geom_point(data = best_of_pop, aes(x = key, y = tempo, label = track.name, label2 = speechiness), color = "#00A1E4") +
-  ylim(80, 140) +
-  theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
-  theme(panel.background = element_rect(fill = "#cde6ff")) +
-  ggtitle("Key versus bpm") 
-ggplotly(plot)
-```
-
-### Information
 
 
 

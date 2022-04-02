@@ -199,27 +199,25 @@ albums <- bind_rows(albums)
 # print(albums)
 
 ```
+General information {data-navmenu="General information" data-icon="fa-list"}
+=====================================
 
-
-
-
-# General information
+## Column 1
 
 Student: Sebastiaan Snel  
 StudentID: 11855479  
 Computational musicology  
 
 
-
 **General research question:**
 
-In the city Berlin in the genres house and techno. How did tracks from the genres change because of the fall of the Berlin wall?  
-And how did these genres change differently? A comparison between pre and post Berlin wall fall tracks. 
+This research uses Berlin house music songs categorized in a pre and a post fall of the Berlin wall release date. Therefore the main question of this research is, how did tracks from the genres change because of the fall of the Berlin wall?  
+A comparison between pre and post Berlin wall fall tracks. 
 
  **Corpus** 
 
-The corpus exists of a gathering of house and techno tracks that are made by Berlin artists before and after the fall of the Berlin wall.  
-I think a good timespan to choose would be from tracks that were released between 10 or 15 years before and 10 or 15 years after the fall.
+The corpus exists of a gathering of house tracks from different albums that are made by Berlin artists before and after the fall of the Berlin wall.  
+The chosen time span from release date of the songs is between 10 or 15 years before and 10 or 15 years after the fall (1989).
 
 **Decision of choosing the corpus**
 
@@ -229,15 +227,15 @@ a major effect on the music that is listened to in this period of time.
 
 **Grouping**
 
-At first the different groups in the corpus are the genres house and techno. Second these genres are splitted up in pre and post fall of the Berlin wall.  
-Third these groups could be splitted up in eastern Berlin artists and western Berlin artists. The differences among these groups could be that the eastern   
-Berlin artists made threw a much bigger cultural change in these years then the western Berlin artists. There could be a difference in change or these   
+At first the different groups in the corpus are the genres house and techno. Second these genres are divided in pre and post fall of the Berlin wall.  
+Third these groups could be divided in eastern Berlin artists and western Berlin artists. The differences among these groups could be that the eastern   
+Berlin artists made through a much bigger cultural change in these years compared to the western Berlin artists. There could be a difference in change or these   
 groups could have created change in the other groups.
 
 **Gaps**
 
 I think the most important gaps could be the tracks that aren't on spotify of the smaller groups like eastern - Berlin - pre wall fall - house music.   
-A limitation is that spotifu doesn't provide the popularity of the tracks in the time that they were released because spotify didn't exist at that time.
+A limitation is that spotify doesn't provide the popularity of the tracks in the time that they were released because spotify didn't exist at that time.
 
 **An example of an artist and song**
 
@@ -245,23 +243,57 @@ Paul Kalkbrenner grew up in eastern Berlin and had the age of 13 when the wall f
 is nowadays. Gia 2000 is an example of a typical Paul Kalkbrenner track. Typical about this track is the peaceful vibe that Paul tries to create by the  
 simplicity of the track
 
-Grouped scatterplot {data-navmenu="Track scatterplots" data-icon="fa-list"}
+## Column 2
+
+### Pre Berlin
+
+```{=html}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5VpXCpPIf54z6nbQSn2QZe?utm_source=generator" width="100%" height="380" frameBorder="0.5" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" data-external="1"></iframe>
+```
+
+### Post Berlin
+
+```{=html}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2Jyk5M7FXsYLmgTZPbqZLj?utm_source=generator" width="100%" height="380" frameBorder="0.5" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" data-external="1"></iframe>
+```
+
+
+
+
+Danceability scatter plots {data-navmenu="Scatterplots" data-icon="fa-list"}
 =====================================
 
-```{r}
+## Column 1
+
+### Grouped scatter plot
+
+
+```{r, fig.height=9}
 plot <- ggplot() +
   geom_point(data = berlintechno_pre1989, aes(x = tempo, y = danceability), color = "#1DB954") +
   geom_point(data = berlintechno_post1989, aes(x = tempo, y = danceability), color = "#FF339F") +
   theme(panel.background = element_rect(fill = "#cde6ff")) +
-  ggtitle("Tempo versus valence") 
+  ggtitle("Tempo versus danceability") 
 ggplotly(plot)
 ```
 
 
-Non grouped scatterplot 1 {data-navmenu="Track scatterplots" data-icon="fa-list"}
-=====================================
+### Information
 
-```{r}
+To start the analysis the tracks gathered on spotify are divided into two groups.
+The green dots represent the tracks that were released before the fall of the Berlin wall
+and the pink dots represent the period after it.
+
+The first thing that pops out of the image above is that the danceability of post group is higher at the same tempo as the pre group.
+The second thing we see is that the post group is more concentrated around a bpm of 120-130. Out of this we can conclude that trend of the tracks went to being more danceable could have been created by a change of bpm in the tracks.
+
+The graphs above are interactive. This means it's possible to hover over all the elements zoom in on parts of the graph.
+
+## Column 2
+
+### Non grouped scatter plot
+
+```{r, fig.height=9}
 plot <- ggplot(berlintechno, aes(x = tempo, y = danceability, size = loudness)) +
   geom_point(size = 1.4, color ="#1DB954") +
   geom_smooth(method="loess", se=F, color = "#191414") +
@@ -272,10 +304,20 @@ plot <- ggplot(berlintechno, aes(x = tempo, y = danceability, size = loudness)) 
 ggplotly(plot)
 ```
 
-Non grouped scatterplot 2 {data-navmenu="Track scatterplots" data-icon="fa-list"}
+### Information
+To make this trend towards more danceable music in the tempo region of 120-130 pm more visual a trendline is added to the first image in the second image. It is now viewable the the this region of bpm dominates the danceability.
+
+Out of the two graphs on this page we can conclude that there has been an change in tempo in between the groups and that the post group has found the sweet sport of spotify's danceability parameter in a better way. Next up on the other scatter plots page we are going to look if this change has resulted in a grow of popularity and if there is a difference in other parameters in between the groups.
+
+
+Other scatter plots {data-navmenu="Scatter plots" data-icon="fa-list"}
 =====================================
 
-```{r}
+## Column 1
+
+### Grouped scatter plot
+
+```{r, fig.height=9}
 plot <- ggplot() +
   geom_point(data = berlintechno_pre1989, aes(x = energy, y = loudness), color = "#1DB954") +
   geom_point(data = berlintechno_post1989, aes(x = energy, y = loudness), color = "#FF339F") +
@@ -285,9 +327,41 @@ plot <- ggplot() +
 ggplotly(plot)
 ```
 
-Boxplot {data-navmenu="tempo and rest" data-icon="fa-list"}
+### Information
+In the graph above shows the correlation between loudness and energy of the tracks that are shown. When seeing the graph a conclusion can be made that for both groups energy increases when loudness increases. The correlation is linear in both groups. The linear increase between loudness and energy looks exactly the same in both groups. 
+
+In contrast with the danceability versus tempo the fall didn't change the fundimental priciple of an increasing loudness with an increasing energy. The next graph will look at the data in an completely different way while sticking with the scatter plots. 
+
+
+
+## Column 2
+
+### Album scatter plot
+
+```{r, fig.width=9} 
+  ggplot(albums, aes(x = release_date, y = popularity, color=total_tracks)) +
+    geom_point() +
+    geom_smooth(method="loess", se=F, color = "#191414") +
+    theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
+    theme(panel.background = element_rect(fill = "#cde6ff")) +
+    ggtitle("Album popularity over time") +
+    scale_x_discrete(guide = guide_axis(check.overlap = TRUE))
+```
+
+### Information
+In the graph above the data is organised in a different way. Instead of making the pre and post groups the data is divided into all 58 albums that the data contains. In the graph is shown if the popularity of the albums within the data has increased over time. With the fall of the Berlin wall being in 1989 a difference in popularity is shown. The main difference in popularity between the two periods are the most populair albums. Before the fall of the Berlin wall popularity doesn't rise above 30 while after it the highest popularity increases to 40 and above fast. The reason for this could be that house and techno music became more mainstream after 1989. 
+
+Before the fall of the Berlin wall these music genres were underground and mostly illegal in eastern Berlin. This supports the grow of the popularity after the fall of the Berlin wall. For now the scatterplots are done. Next up are the special plot types which illuminate the data in a couple of other ways.
+
+
+
+Boxplot & 3D {data-navmenu="Special plots" data-icon="fa-list"}
 =====================================
-```{r}
+
+## Column 1
+
+### Boxplot
+```{r, fig.height=9}
 berlintechno <- unique(berlintechno)
 plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
   geom_boxplot(color ="#1DB954") +
@@ -297,9 +371,13 @@ plot <- ggplot(berlintechno, aes(x = key, y = tempo, group=key)) +
 ggplotly(plot)
 ```
 
-3D {data-navmenu="tempo and rest" data-icon="fa-list"}
-=====================================
-```{r}
+### Information
+
+## Column 1
+
+### 3D plot
+
+```{r, fig.height=9}
 data(berlintechno)
 # designing the first 3-dimensional plot
 plot <- plot_ly(berlintechno,x=~tempo, y=~danceability, z=~energy ,color=~loudness, mode= "markers",type = "scatter3d") %>% 
@@ -307,8 +385,14 @@ plot <- plot_ly(berlintechno,x=~tempo, y=~danceability, z=~energy ,color=~loudne
 plot
 ```
 
-Novelty {data-navmenu="tempo and rest" data-icon="fa-list"}
+### Information
+
+Novelty & tempo {data-navmenu="Special plots" data-icon="fa-list"}
 =====================================
+
+## Column 1
+
+### Novelty diagram
 ```{r}
 Klaus <-
   get_tidy_audio_analysis("2w99Aa8kBTCRQsXvYbgSg5") %>%
@@ -328,9 +412,12 @@ Klaus %>%
 
 ```
 
+### Information
 
-Cyclic tempogram {data-navmenu="tempo and rest" data-icon="fa-list"}
-=====================================
+## Column 2
+
+### Tempogram
+
 ```{r}
 Klaus <- get_tidy_audio_analysis("2w99Aa8kBTCRQsXvYbgSg5")
 
@@ -343,10 +430,15 @@ Klaus %>%
   theme_classic()
 ```
 
+### Information
 
-Dendogram {data-navmenu="tempo and rest" data-icon="fa-list"}
+Dendogram & Heatmap {data-navmenu="Special plots" data-icon="fa-list"}
 =====================================
-```{r}
+
+## Column 1
+
+### Dendogram
+```{r, fig.height=9}
 get_conf_mat <- function(fit) {
   outcome <- .get_tune_outcome_names(fit)
   fit %>% 
@@ -422,32 +514,28 @@ halloween_dist %>%
 
 ```
 
-heatmap {data-navmenu="tempo and rest" data-icon="fa-list"}
-=====================================
-```{r}
+### Information
+
+## Column 2
+
+### Heatmap
+```{r, fig.width=13, fig.height=9}
 heatmaply(
   halloween_juice,
   hclustfun = hclust,
   hclust_method = "average",  # Change for single, average, or complete linkage.
   dist_method = "euclidean"
 ) 
-
 ```
 
+### Information
 
-Album scatterplot {data-navmenu="Album plots" data-icon="fa-list"}
+Chromagrams {data-navmenu="Chromagrams" data-icon="fa-list"}
 =====================================
-```{r} 
-  ggplot(albums, aes(x = release_date, y = popularity, color=total_tracks)) +
-    geom_point() +
-    geom_smooth(method="loess", se=F, color = "#191414") +
-    theme_update(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")) +
-    theme(panel.background = element_rect(fill = "#cde6ff")) +
-    scale_x_discrete(guide = guide_axis(check.overlap = TRUE))
-```
 
-Chromagram key 1 {data-navmenu="Chromagrams" data-icon="fa-list"}
-=====================================
+## Column 1 {.tabset}
+
+### Key 1
 ```{r}
 pre_berlin <-
   get_tidy_audio_analysis("2w99Aa8kBTCRQsXvYbgSg5") %>%
@@ -473,8 +561,11 @@ pre_berlin %>%
 
 ```
 
-Chromagram key 2 {data-navmenu="Chromagrams" data-icon="fa-list"}
-=====================================
+### Information
+
+## Column 2 {.tabset}
+
+### Key 2
 ```{r}
 past_berlin <-
   get_tidy_audio_analysis("5fD6IOlU52WpFCY9Z267TP") %>%
@@ -500,8 +591,16 @@ past_berlin %>%
 
 ```
 
-Self-similarity matrix 1 {data-navmenu="Chromagrams" data-icon="fa-list"}
+### Information
+
+
+
+Self-similarity matrices {data-navmenu="Chromagrams" data-icon="fa-list"}
 =====================================
+
+## Column 1 {.tabset}
+
+### Self_similarity matrix 1
 ```{r}
 pre_berlin <-
   get_tidy_audio_analysis("2w99Aa8kBTCRQsXvYbgSg5") %>%
@@ -542,9 +641,11 @@ pre_berlin %>%
 
 ```
 
+### Information 
 
-Self-similarity matrix 2 {data-navmenu="Chromagrams" data-icon="fa-list"}
-=====================================
+## Column 2 {.tabset}
+
+### Self_similarity matrix 2
 
 ```{r}
 post_berlin <-
@@ -586,9 +687,13 @@ post_berlin %>%
 
 ```
 
+### Information 
 
-Chordogram 1 {data-navmenu="Chordograms" data-icon="fa-list"}
+Chordograms {data-navmenu="Chordograms" data-icon="fa-list"}
 =====================================
+## Column 1 {.tabset}
+
+### Chordogram 1
 
 ```{r}
 circshift <- function(v, n) {
@@ -706,9 +811,11 @@ twenty_five %>%
 
 ```
 
+### Information
 
-Chordogram 2 {data-navmenu="Chordograms" data-icon="fa-list"}
-=====================================
+## Column 2 {.tabset}
+
+### Chordogram 2
 
 ```{r}
 
@@ -740,43 +847,16 @@ twenty_five %>%
   labs(x = "Time (s)", y = "")
 ```
 
-Chordogram 3 {data-navmenu="Chordograms" data-icon="fa-list"}
-=====================================
-
-```{r}
-twenty_five <-
-  get_tidy_audio_analysis("5UVsbUV0Kh033cqsZ5sLQi") %>%
-  compmus_align(bars, segments) %>%
-  select(bars) %>%
-  unnest(bars) %>%
-  mutate(
-    pitches =
-      map(segments,
-        compmus_summarise, pitches,
-        method = "mean", norm = "manhattan"
-      )
-  )
-
-twenty_five %>% 
-  compmus_match_pitch_template(
-    key_templates,         # Change to chord_templates if descired
-    method = "euclidean",  # Try different distance metrics
-    norm = "manhattan"     # Try different norms
-  ) %>%
-  ggplot(
-    aes(x = start + duration / 2, width = duration, y = name, fill = d)
-  ) +
-  geom_tile() +
-  scale_fill_viridis_c(guide = "none") +
-  theme_minimal() +
-  labs(x = "Time (s)", y = "")
-
-```
+### Information
 
 Key vs bpm {data-navmenu="Chordograms" data-icon="fa-list"}
 =====================================
 
-```{r}
+## Column 1
+
+### Scatterplot
+
+```{r, fig.height=10}
 plot <- ggplot() +
   geom_point(data = nsa_gig_1, aes(x = key, y = tempo, label = track.name, label2 = speechiness), color = "#1DB954") +
   geom_point(data = camel_house, aes(x = key, y = tempo, label = track.name, label2 = speechiness), color = "#FF339F") +
@@ -787,6 +867,8 @@ plot <- ggplot() +
   ggtitle("Key versus bpm") 
 ggplotly(plot)
 ```
+
+### Information
 
 
 

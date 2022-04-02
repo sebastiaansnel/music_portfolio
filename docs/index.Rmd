@@ -189,59 +189,38 @@ album58 <- album58[ c("name","release_date", "popularity", "total_tracks")]
 
 albums <- list(album1, album2, album3, album4, album5, album6, album7, album8, album9, album10, album11, album12, album13, album14, album15, album16, album17, album18, album19, album21,  album22, album23, album24, album25, album26, album27, album28, album29, album30, album31, album32, album33, album34, album35, album36, album37, album38, album39, album40, album41, album42, album43, album44, album45, album46, album47, album48, album49, album50, album51, album52, album53, album54, album55, album56, album57)
 
-
-
-#album_name <- unnest(album_example, artists)
-#print(album_name)
-#unnest(), nest(), listcolumn()
-
 albums <- bind_rows(albums)
-# print(albums)
+
 
 ```
-General information {data-navmenu="General information" data-icon="fa-list"}
+General information {data-navmenu="General information and spotify" data-icon="fa-list"}
 =====================================
 
 ## Column 1
 
-Student: Sebastiaan Snel  
-StudentID: 11855479  
-Computational musicology  
-
-
 **General research question:**
 
-This research uses Berlin house music songs categorized in a pre and a post fall of the Berlin wall release date. Therefore the main question of this research is, how did tracks from the genres change because of the fall of the Berlin wall?  
-A comparison between pre and post Berlin wall fall tracks. 
+This research uses Berlin house music songs categorized in a pre and a post fall of the Berlin wall release date. Therefore the main question of this research is, how did tracks from the genres change because of the fall of the Berlin wall? A comparison between pre and post Berlin wall fall tracks. 
 
  **Corpus** 
 
-The corpus exists of a gathering of house tracks from different albums that are made by Berlin artists before and after the fall of the Berlin wall.  
-The chosen time span from release date of the songs is between 10 or 15 years before and 10 or 15 years after the fall (1989).
+The corpus exists of a gathering of house tracks from different albums that are made by Berlin artists before and after the fall of the Berlin wall. The chosen time span from release date of the songs is between 10 or 15 years before and 10 or 15 years after the fall (1989).
 
 **Decision of choosing the corpus**
 
-The decision of choosing this corpus is because I am interested in cultural influences on specific music genres that I like.   
-The interesting part of this case is the change from communism to capitalism in the eastern part of the city which could have   
-a major effect on the music that is listened to in this period of time. 
+The decision of choosing this corpus is because I am interested in cultural influences on specific music genres that I like. The interesting part of this case is the change from communism to capitalism in the eastern part of the city which could have a major effect on the music that is listened to in this period of time. 
 
 **Grouping**
 
-At first the different groups in the corpus are the genres house and techno. Second these genres are divided in pre and post fall of the Berlin wall.  
-Third these groups could be divided in eastern Berlin artists and western Berlin artists. The differences among these groups could be that the eastern   
-Berlin artists made through a much bigger cultural change in these years compared to the western Berlin artists. There could be a difference in change or these   
-groups could have created change in the other groups.
+At first the different groups in the corpus are the genres house and techno. Second these genres are divided in pre and post fall of the Berlin wall. Third these groups could be divided in eastern Berlin artists and western Berlin artists. The differences among these groups could be that the eastern Berlin artists made through a much bigger cultural change in these years compared to the western Berlin artists. There could be a difference in change or these groups could have created change in the other groups.
 
 **Gaps**
 
-I think the most important gaps could be the tracks that aren't on spotify of the smaller groups like eastern - Berlin - pre wall fall - house music.   
-A limitation is that spotify doesn't provide the popularity of the tracks in the time that they were released because spotify didn't exist at that time.
+I think the most important gaps could be the tracks that aren't on spotify of the smaller groups like eastern - Berlin - pre wall fall - house music. A limitation is that spotify doesn't provide the popularity of the tracks in the time that they were released because spotify didn't exist at that time.
 
 **An example of an artist and song**
 
-Paul Kalkbrenner grew up in eastern Berlin and had the age of 13 when the wall fell. Right after that he started to spin records and became the big dj he  
-is nowadays. Gia 2000 is an example of a typical Paul Kalkbrenner track. Typical about this track is the peaceful vibe that Paul tries to create by the  
-simplicity of the track
+Paul Kalkbrenner grew up in eastern Berlin and had the age of 13 when the wall fell. Right after that he started to spin records and became the big dj he is nowadays. Gia 2000 is an example of a typical Paul Kalkbrenner track. Typical about this track is the peaceful vibe that Paul tries to create by the simplicity of the track.
 
 ## Column 2
 

@@ -888,8 +888,8 @@ twenty_five %>%
 ```
 ## Column 2
 
-
-### Information
+ 
+### Information 
 
 ### Track
 ```{=html}

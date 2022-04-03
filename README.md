@@ -7,58 +7,20 @@ Computational musicology
 https://sebastiaansnel.github.io/music_portfolio/
 
 
-**General research question:**
+I wasn't able to upload the last page because the github push didn't work. Therefore I added the last pages underneath with some screenshots.
 
-In the city Berlin in the genres house and techno. How did tracks from the genres change because of the fall of the Berlin wall? 
-And how did these genres change differently? A comparison between pre and post Berlin wall fall tracks. 
+<img width="1425" alt="Schermafbeelding 2022-04-03 om 17 21 57" src="https://user-images.githubusercontent.com/59564243/161435198-c9512142-fa75-408d-b5b8-d4ed74937c6b.png">
 
- **Corpus** 
-
-The corpus exists of a gathering of house and techno tracks that are made by Berlin artists before and after the fall of the Berlin wall.
-I think a good timespan to choose would be from tracks that were released between 10 or 15 years before and 10 or 15 years after the fall.
-
-**Decision of choosing the corpus**
-
-The decision of choosing this corpus is because I am interested in cultural influences on specific music genres that I like. The interesting 
-part of this case is the change from communism to capitalism in the eastern part of the city which could have a major effect on the music
-that is listened to in this period of time. 
-
-**Grouping**
-
-At first the different groups in the corpus are the genres house and techno. Second these genres are splitted up in pre and post fall of the Berlin wall.
-Third these groups could be splitted up in eastern Berlin artists and western Berlin artists. The differences among these groups could be that the eastern 
-Berlin artists made threw a much bigger cultural change in these years then the western Berlin artists. There could be a difference in change or these 
-groups could have created change in the other groups.
-
-**Gaps**
-
-I think the most important gaps could be the tracks that aren't on spotify of the smaller groups like eastern - Berlin - pre wall fall - house music. 
-A limitation is that spotifu doesn't provide the popularity of the tracks in the time that they were released because spotify didn't exist at that time.
-
-**An example of an artist and song**
-
-Paul Kalkbrenner grew up in eastern Berlin and had the age of 13 when the wall fell. Right after that he started to spin records and became the big dj he
-is nowadays. Gia 2000 is an example of a typical Paul Kalkbrenner track. Typical about this track is the peaceful vibe that Paul tries to create by the
-simplicity of the track
+<img width="1431" alt="Schermafbeelding 2022-04-03 om 17 22 08" src="https://user-images.githubusercontent.com/59564243/161435203-09ff585d-ad48-44f0-b06d-cddb68932cf1.png">
 
 
-
-Homework 2:
-
-images:
-![Rplot](https://user-images.githubusercontent.com/59564243/154936037-e75fc40d-0620-46ed-b2e9-562321b1e93f.png)
-This first plot shows the tempo of the tarcks versus the valence that a song has. At first i thought a higher tempo would mean a higher valence but this is not really true.
-
-![Rplot01](https://user-images.githubusercontent.com/59564243/154936071-91d4c8b3-6bf8-49da-83a9-72feac5cc191.png)
-In this image we can see if in e certain key the acousticness is higher or not. It is interesting because it's hard to see it without a graph.
-
-![Rplot02](https://user-images.githubusercontent.com/59564243/154936089-69fc2aa9-7df5-4cd8-8a31-3f8f7ab642dc.png)
-The interesting part aboiut image 3 is that there should be a sweet spot visible for dancebility in tempo.
+<img width="1421" alt="Schermafbeelding 2022-04-03 om 17 22 18" src="https://user-images.githubusercontent.com/59564243/161435213-c47c4883-8b1c-4ec0-a9d4-a597d7728e40.png">
 
 
+<img width="1418" alt="Schermafbeelding 2022-04-03 om 17 22 28" src="https://user-images.githubusercontent.com/59564243/161435217-e704c853-9a3f-433d-801b-4b0556deb4a4.png">
 
 
-
+<img width="1429" alt="Schermafbeelding 2022-04-03 om 17 22 36" src="https://user-images.githubusercontent.com/59564243/161435227-66c03de9-1b70-4a17-b774-e336e41ead3d.png">
 
 
 

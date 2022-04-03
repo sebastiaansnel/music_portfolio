@@ -10,7 +10,7 @@ https://sebastiaansnel.github.io/music_portfolio/
 
 
 I wasn't able to upload the last page because the github push didn't work. Therefore I added the last pages underneath with some screenshots.
-
+The plots that were missing are the plots that I've added here:
 
 
 
